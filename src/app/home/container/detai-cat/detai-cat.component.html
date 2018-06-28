@@ -1,0 +1,10 @@
+<h1>Update Category</h1>
+    <div class="form-group">
+      <label>Code:</label>
+      <input type="text" class="form-control" [(ngModel)]="detail.code">
+    </div>
+    <div class="form-group">
+      <label>Designation:</label>
+      <input type="text" class="form-control" [(ngModel)]="detail.designation">
+    </div>
+    <input type="button" class="btn btn-success" value="Add Category" (click)="updateCategory(detail,detail._id)">

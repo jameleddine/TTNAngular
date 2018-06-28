@@ -1,0 +1,47 @@
+<h1>{{'produit'|translate}}</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <td>ID</td>
+      <td>Code</td>
+      <td>Libellé</td>
+      <td>Prix</td>
+      <td>Actions</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let produit of listProduits">
+      <td>{{produit._id}}</td>
+      <td>{{produit.code}}</td>
+      <td>{{produit.libelle}}</td>
+      <td>{{produit.prix}}</td>
+      <td>
+        <i class="fa fa-pencil-square-o" aria-hidden="true" (click)="getDetailProduit(produit)"></i>
+        <i class="fa fa-trash-o" aria-hidden="true" (click)="deleteProduit(produit)"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h1>{{'category' | translate}}</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <td>ID</td>
+      <td>Code</td>
+      <td>Designation</td>
+      <td>Actions</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let category of listCategory">
+      <td>{{category._id}}</td>
+      <td>{{category.code}}</td>
+      <td>{{category.designation}}</td>
+      <td>
+          <i class="fa fa-pencil-square-o" aria-hidden="true" (click)="getDetailCategory(category)"></i>
+          <i class="fa fa-trash-o" aria-hidden="true" (click)="deleteCategory(category)"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>

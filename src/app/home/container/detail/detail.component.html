@@ -1,0 +1,19 @@
+<div class="col-md-6">
+    <h1>Detail Produits</h1>
+    <div class="form-group">
+      <label>Code:</label>
+      <input type="text" class="form-control" [(ngModel)]="detail.code">
+    </div>
+    <div class="form-group">
+      <label>Libelle:</label>
+      <input type="text" class="form-control" [(ngModel)]="detail.libelle">
+    </div>
+    <div class="form-group">
+      <label>Prix:</label>
+      <input type="number" class="form-control" [(ngModel)]="detail.prix">
+    </div>
+    <input type="button" class="btn btn-success" value="Update Product" (click)="updateProduct(detail,detail._id)">
+  </div>
+  <!-- <input [(ngModel)]='a'>
+  <input [(ngModel)]='b'>
+  <input type="button" (click)="calculate(a,b)" value="click"> -->

@@ -1,0 +1,64 @@
+<p>
+    container works! {{title}}
+  </p>
+  <button class="btn btn-primary" [disabled]="bool">Button 1</button>
+  <button class="btn btn-primary" [disabled]="bool2">Button 2</button>
+  
+  <!-- <img src="{{srcimg}}"> -->
+  <!-- <img bind-src="srcimg">
+  <img [src]="srcimg"> -->
+  
+  <button class="btn btn-success" (click)="callFunction()">click</button>
+  <br>
+  <button class="btn btn-danger" (click)="decrement()">-</button>
+  {{count}}
+  <button class="btn btn-success" (click)="increment()">+</button>
+  <br>
+  <input [(ngModel)]="count">
+  <p>Hello {{username}}!</p>
+  <hr>
+  
+  <div class="form-group row">
+    <label class="col-md-2">Name</label>
+    <input type="text" class="form-control col-md-3" [(ngModel)]='name'>
+  </div>
+  
+  <div class="form-group row" *ngIf="name!=null && name!=''">
+    <label class="col-md-2">Email</label>
+    <input type="email" class="form-control col-md-3" [(ngModel)]='email'>
+  </div>
+  
+  <div class="form-group row" *ngIf="name=='jamel'">
+    <label class="col-md-2">Phone</label>
+    <input type="number" class="form-control col-md-3" [(ngModel)]='phone'>
+  </div>
+  
+  <div class="form-group row">
+    <label class="col-md-2">About</label>
+    <textarea class="form-control col-md-3" [(ngModel)]='about'></textarea>
+  </div>
+  <div class="action row">
+    <button class="btn btn-danger col-md-2" (click)="valider()">Valider</button>
+    <button class="btn btn-success col-md-2" (click)="annuler()">Annuler</button>
+  </div>
+  {{user|json}}
+  <hr>
+  <table class="table">
+    <thead>
+      <tr>
+        <td>Search:</td>
+        <td><input type="text" class="form-control" [(ngModel)]="search"></td>
+      </tr>
+      <tr>
+          <td>ID</td>
+          <td appMydirective>Name</td>
+      </tr>
+     
+    </thead>
+    <tbody>
+      <tr *ngFor = "let item of HEROES |mypipe:search">
+        <td >{{item.id}}</td>
+        <td [ngClass]="{'dark-class':item.name=='Batman','yellow-class':item.name=='Flash','red-class':item.name=='Superman'}">{{item.name}}</td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,36 @@
+<div class="row container">
+  <div class="col-md-6">
+    <h1>Ajout Produits</h1>
+    <div class="form-group">
+      <label>Code:</label>
+      <input type="text" class="form-control" [(ngModel)]="codeP">
+    </div>
+    <div class="form-group">
+      <label>Libelle:</label>
+      <input type="text" class="form-control" [(ngModel)]="libelleP">
+    </div>
+    <div class="form-group">
+      <label>Prix:</label>
+      <input type="number" class="form-control" [(ngModel)]="prixP">
+    </div>
+    <div class="form-group">
+      <label>Category:</label>
+      <select class="form-control" [(ngModel)]="categoryP">
+        <option *ngFor='let cat of listCategory' value={{cat._id}}>{{cat.code}}-{{cat.designation}}</option>
+      </select>
+    </div>
+    <input type="button" class="btn btn-success" value="Add Product" (click)="ajoutProduit()">
+  </div>
+  <div class="col-md-6">
+    <h1>Ajout Category</h1>
+    <div class="form-group">
+      <label>Code:</label>
+      <input type="text" class="form-control" [(ngModel)]="codeC">
+    </div>
+    <div class="form-group">
+      <label>Designation:</label>
+      <input type="text" class="form-control" [(ngModel)]="designationC">
+    </div>
+    <input type="button" class="btn btn-success" value="Add Category" (click)="ajoutCategory()">
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div *ngIf="urlInfo">
+  <app-navbar></app-navbar>
+</div>
+<div class="row">
+  <div class="col-md-3" *ngIf="urlInfo">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div [ngClass]="{'col-md-9':urlInfo,'col-md-12':!urlInfo}">
+    <div class="app-container"></div>
+  </div>
+</div>
+
+
+

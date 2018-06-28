@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" [routerLink]="['/']">Gestion Produit</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/']">Dashboard <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['detail','123']">Detail</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['parametre']">Paramètre</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['poc']">POC</a>
+      </li>
+    </ul>
+    <form class="form-inline">
+        <button class="btn btn-outline-info my-2 my-sm-0 login" [routerLink]='["login"]'>Login</button>
+        <button class="btn btn-outline-info my-2 my-sm-0" [routerLink]='["inscription"]'>Inscription</button>
+        
+        <select #langSelect (change)="translate.use(langSelect.value)" class="form-control">
+          <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+        </select>
+      </form>
+  </div>
+</nav>
